@@ -1,0 +1,54 @@
+.container {
+  height: calc(100vh - 130px);
+  overflow: auto;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.headerSticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.body {
+  position: relative;
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.clickableRow:hover {
+  /* Light accent on hover */
+  background-color: color-mix(in oklab, var(--accent) 14%, transparent);
+}
+
+/* Ensure the hover color is visible even if cells have their own background */
+.clickableRow td {
+  transition: background-color 160ms ease;
+}
+
+.clickableRow:hover td {
+  background-color: color-mix(in oklab, var(--accent) 50%, transparent);
+}
+
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cellLink {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
